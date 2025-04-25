@@ -53,4 +53,5 @@ jobs:
           kubectl apply -f ${{ github.workspace }}/aks/main.yml
       - name: Creacion de Task
         run: |
+          sleep 60    # espera 60 segundos
           kubectl get all -n helloworld

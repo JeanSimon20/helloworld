@@ -51,4 +51,6 @@ jobs:
       - name: Deploy to AKS
         run: |
           kubectl apply -f ${{ github.workspace }}/aks/main.yml
-          
+      - name: Creacion de Task
+        run: |
+          kubectl get all -n helloworld

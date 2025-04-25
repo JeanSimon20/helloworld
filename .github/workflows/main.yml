@@ -42,3 +42,10 @@ jobs:
       - name: Use kubelogin with spn method
         run: |
           kubelogin convert-kubeconfig -l spn --client-id ${{ secrets.AZURE_CLIENT_ID }} --client-secret ${{ secrets.AZURE_CLIENT_SECRET }} --tenant-id ${{ secrets.AZURE_TENANT_ID }}
+      - name: replace tag
+        run: sed -i "s|latest|${{ github.sha }}|g" ${{ github.workspace }}/aks/main.yml
+      - name: Deploy to AKS
+        run: |
+          kubectl delete -f ${{ github.workspace }}/aks/main.yml
+          kubectl apply -f ${{ github.workspace }}/aks/main.yml
+        continue-on-error: true

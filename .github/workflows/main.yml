@@ -29,4 +29,4 @@ jobs:
         run: docker build -t ${{ secrets.ACR_SERVER }}/${{ github.event.repository.name }}:${{ github.sha }} . && docker build -t ${{ secrets.ACR_SERVER }}/${{ github.event.repository.name }}:latest .
 
       - name: Push Docker image
-        run: docker push ${{ secrets.ACR_SERVER }}/${{ github.event.repository.name }}:${{ github.sha }} && docker push ${{ secrets.ACR_SERVER }}/${{ github.event.repository.name }}:${{ github.sha }}
+        run: docker push ${{ secrets.ACR_SERVER }}/${{ github.event.repository.name }}:${{ github.sha }}

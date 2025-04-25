@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: app
-        image: azarcr02.azurecr.io/helloworld:latest
+        image: acrmibancodevops.azurecr.io/helloworld:latest
         ports:
         - containerPort: 8080
         resources:

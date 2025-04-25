@@ -49,8 +49,6 @@ kind: Ingress
 metadata:
   name: helloworld-ingress
   namespace: helloworld
-  annotations:
-    cert-manager.io/issuer: "issuer"
   labels:
     app: helloworld
 spec:
